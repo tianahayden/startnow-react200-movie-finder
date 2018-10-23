@@ -15,4 +15,11 @@ app.get('/api', (req,res) => {
         });
 });
 
+app.get('/api/details', (req,res) => {
+    axios.get('http://www.omdbapi.com/?i=' + req.query.movie + '&apikey=8730e0e')
+        .then(response => {
+            res.send(response.data);
+        });
+});
+
 module.exports = app;

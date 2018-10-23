@@ -26,12 +26,6 @@ class MovieSearch extends React.Component {
         dispatch(getMovieData(movieName));
     }
 
-    // route to movies page, passing the IMDB ID
-    handleInfoClick(e) {
-        const { dispatch } = this.props;
-        dispatch()
-    }
-
     render() {
         const { movieData, showMovieData } = this.props
         return (
@@ -51,8 +45,7 @@ class MovieSearch extends React.Component {
                                     <div>{movie.Title}</div>
                                     <div>{movie.Year}</div>
                                 </div>
-                                {/* <Link to={`/movie/${movie.Poster}`} classN$ame='movie-button'>More Information</Link> */}
-                                <button name={movie.imdbID} onClick={this.handleInfoClick}>More Information</button>
+                                <Link to={`/movie/${movie.imdbID}`} className='movie-button'>More Information</Link>
                             </div>
                         )}
                     </div>
