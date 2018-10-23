@@ -62,11 +62,16 @@ $secondary-color: #3f4e51;
 }
 
 .ms-movie-button {
-  border-radius: 10%;
-    color: white;
-    height: 10vh;
-    width: 10vw;
-    margin: 4vh;
+  border-radius: 5%;
+  color: white;
+  height: 10vh;
+  width: 10vw;
+  margin: 4vh;
+  text-decoration: none;
+  background-color: darken( $primary-color, 10% );
+  padding: 10px;
+  border: 1px soldi $secondary-color;
+  font-size: 2vh;
 }
 
 .md-title {
@@ -116,3 +121,19 @@ $secondary-color: #3f4e51;
   background-color: $secondary-color;
   color: white;
 }
+
+.md-back-link {
+  text-decoration: none;
+  color: gray;
+  font-style: italic;
+  font-size: 2vh;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.md-back-link:hover {
+  text-decoration: underline;
+}
+

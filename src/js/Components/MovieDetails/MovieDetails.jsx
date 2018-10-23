@@ -18,7 +18,7 @@ class MovieDetails extends React.Component {
     const { movieDetails } = this.props;
     return (
       <div className='container'>
-        <Link to={'/'}>Go Back</Link>
+        <Link to={'/'} className='md-back-link'><i className="fas fa-chevron-left"></i>Go Back</Link>
         <h1 className='md-title'>Movie Details</h1>
         <div className='md-movie-details'>
           <div className='image-parent'>

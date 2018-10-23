@@ -38,7 +38,7 @@ class MovieSearch extends React.Component {
                 </div>
                 {(showMovieData) &&
                     <div id='results' name='results' className='ms-results'>
-                        {movieData.Search.map((movie, index) =>
+                        {movieData.Search.filter(movie => movie.Poster !== "N/A").map((movie, index) =>
                             <div className='ms-indiv-result' key={index}>
                                 <img className='ms-poster' src={`${movie.Poster}`} />
                                 <div className='ms-movie'>
