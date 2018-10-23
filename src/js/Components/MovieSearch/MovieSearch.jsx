@@ -29,23 +29,23 @@ class MovieSearch extends React.Component {
     render() {
         const { movieData, showMovieData } = this.props
         return (
-            <div className='movie-search-container'>
-                <h1 className='title'>Get Movie Information</h1>
+            <div className='container'>
+                <h1 className='ms-title'>Get Movie Information</h1>
                 <label>Enter Movie Name:</label>
-                <div className='search-bar'>
+                <div className='ms-search-bar'>
                     <input placeholder='Star Wars' onChange={this.handleSearchInput} onKeyDown={this.enter} />
                     <button onClick={this.handleSearchButton}>Search</button>
                 </div>
                 {(showMovieData) &&
-                    <div className='results'>
+                    <div className='ms-results'>
                         {movieData.Search.map((movie, index) =>
-                            <div className='indiv-result' key={index}>
-                                <img className='poster' src={`${movie.Poster}`} />
-                                <div className='movie'>
+                            <div className='ms-indiv-result' key={index}>
+                                <img className='ms-poster' src={`${movie.Poster}`} />
+                                <div className='ms-movie'>
                                     <div>{movie.Title}</div>
                                     <div>{movie.Year}</div>
                                 </div>
-                                <Link to={`/movie/${movie.imdbID}`} className='movie-button'>More Information</Link>
+                                <Link to={`/movie/${movie.imdbID}`} className='ms-movie-button'>More Information</Link>
                             </div>
                         )}
                     </div>

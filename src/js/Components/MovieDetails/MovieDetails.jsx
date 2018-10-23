@@ -8,7 +8,7 @@ class MovieDetails extends React.Component {
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const { dispatch } = this.props;
     const id = this.props.match.params.id;
     dispatch(getMovieDetails(id));
@@ -17,14 +17,32 @@ class MovieDetails extends React.Component {
   render() {
     const { movieDetails } = this.props;
     return (
-      <div>
-        <h1>Movie Detail Container</h1>
-
-        <p>Viewing movie {this.props.match.params.id}</p>
+      <div className='container'>
         <Link to={'/'}>Go Back</Link>
-        <p>{movieDetails.Title}</p>
-        <p>{movieDetails.Year}</p>
-        <p>{movieDetails.Plot}</p>
+        <h1 className='md-title'>Movie Details</h1>
+        <div className='md-movie-details'>
+          <div className='image-parent'>
+            <img src={`${movieDetails.Poster}`} />
+          </div>
+          <div className='md-movie-text'>
+            <h3>{movieDetails.Title}</h3>
+            <div className='md-movie-group'>
+              <p>Released {movieDetails.Released}</p>
+              <p>{movieDetails.Runtime}</p>
+              <p>{movieDetails.Rated}</p>
+            </div>
+            <p>{movieDetails.Plot}</p>
+            <p>{movieDetails.Awards}</p>
+            <ul>
+              <li>
+                <label>Metascore </label>{movieDetails.Metascore}/100
+              </li>
+              <li>
+                <label>IMDB </label>{movieDetails.imdbRating}/10
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }

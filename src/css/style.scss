@@ -3,29 +3,28 @@ $font-regular:'Lato', sans-serif;
 $primary-color: #b6433e;
 $secondary-color: #3f4e51;
 
-.title {
+.ms-title {
   font-family: $font-movie;
   color: $primary-color;
-  font-size: 20vh;
+  font-size: 4em;
   text-align: center;
 }
 
-.movie-search-container {
+.container {
   font-family: $font-regular;
   color: $secondary-color;
-  font-size: 5vh;
-  padding: 10%;
+  font-size: 3vh;
+  padding: 5vh;
   display: flex;
   flex-direction: column;
 }
 
-.search-bar {
+.ms-search-bar {
   display: flex;
-  justify-content: space-around;
 
   input {
     width: 80vw;
-    height: 10vh;
+    height: 5vh;
   }
 
   button {
@@ -35,7 +34,7 @@ $secondary-color: #3f4e51;
   }
 }
 
-.results {
+.ms-results {
   display: flex;
   overflow: scroll;
   border: 1px solid gainsboro;
@@ -45,7 +44,7 @@ $secondary-color: #3f4e51;
   align-items: center;
 }
 
-.indiv-result {
+.ms-indiv-result {
   margin: 1vw;
   text-align: center;
 
@@ -55,14 +54,62 @@ $secondary-color: #3f4e51;
 
 }
 
-.movie {
+.ms-movie {
   height: 15vh;
 }
 
-.movie-button {
+.ms-movie-button {
   border-radius: 10%;
     color: white;
     height: 10vh;
     width: 10vw;
     margin: 4vh;
+}
+
+.md-title {
+  font-size: 5vh;
+}
+
+.md-movie-details {
+  display: flex;
+}
+
+.md-movie-text {
+  border: 1px solid $secondary-color;
+  margin-left: 2vw;
+  align-items: center;
+
+  p {
+    padding: 0 2vw;
+  }
+
+  h3 {
+    text-align: center;
+    background-color: $primary-color;
+    margin: 0;
+    color: white;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: bold;
+    }
+  }
+}
+
+.md-movie-group {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid darken( $secondary-color, 10% );
+  background-color: $secondary-color;
+  color: white;
 }
