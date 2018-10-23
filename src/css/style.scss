@@ -34,3 +34,35 @@ $secondary-color: #3f4e51;
     color: white;
   }
 }
+
+.results {
+  display: flex;
+  overflow: scroll;
+  border: 1px solid gainsboro;
+  margin: 2vw;
+  background: $primary-color;
+  color: white;
+  align-items: center;
+}
+
+.indiv-result {
+  margin: 1vw;
+  text-align: center;
+
+  img {
+    height: 70vh;
+  }
+
+}
+
+.movie {
+  height: 15vh;
+}
+
+.movie-button {
+  border-radius: 10%;
+    color: $primary-color;
+    height: 10vh;
+    width: 10vw;
+    margin: 4vh;
+}

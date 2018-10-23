@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { updateMovie, getMovieData } from './actions';
 
 class MovieSearch extends React.Component {
@@ -9,7 +10,7 @@ class MovieSearch extends React.Component {
         this.enter = this.enter.bind(this);
     }
 
-    enter(e){
+    enter(e) {
         if (e.key === 'Enter') {
             this.handleSearchButton
         }
@@ -20,12 +21,19 @@ class MovieSearch extends React.Component {
         dispatch(updateMovie(e.target.value));
     }
 
-    handleSearchButton(e) {
-        const { dispatch, movieName, movieData } = this.props;
-        dispatch(getMovieData(movieName, movieData));
+    handleSearchButton() {
+        const { dispatch, movieName } = this.props;
+        dispatch(getMovieData(movieName));
+    }
+
+    // route to movies page, passing the IMDB ID
+    handleInfoClick(e) {
+        const { dispatch } = this.props;
+        dispatch()
     }
 
     render() {
+        const { movieData, showMovieData } = this.props
         return (
             <div className='movie-search-container'>
                 <h1 className='title'>Get Movie Information</h1>
@@ -34,6 +42,21 @@ class MovieSearch extends React.Component {
                     <input placeholder='Star Wars' onChange={this.handleSearchInput} onKeyDown={this.enter} />
                     <button onClick={this.handleSearchButton}>Search</button>
                 </div>
+                {(showMovieData) &&
+                    <div className='results'>
+                        {movieData.Search.map((movie, index) =>
+                            <div className='indiv-result' key={index}>
+                                <img className='poster' src={`${movie.Poster}`} />
+                                <div className='movie'>
+                                    <div>{movie.Title}</div>
+                                    <div>{movie.Year}</div>
+                                </div>
+                                {/* <Link to={`/movie/${movie.Poster}`} classN$ame='movie-button'>More Information</Link> */}
+                                <button name={movie.imdbID} onClick={this.handleInfoClick}>More Information</button>
+                            </div>
+                        )}
+                    </div>
+                }
             </div>
         )
     }

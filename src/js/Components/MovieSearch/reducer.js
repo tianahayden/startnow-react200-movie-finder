@@ -1,6 +1,7 @@
 const defaultState = {
     movieName: '',
     movieData: [],
+    showMovieData: false,
 };
 
 export default function MovieSearchReducer(state = defaultState, action) {
@@ -16,7 +17,8 @@ export default function MovieSearchReducer(state = defaultState, action) {
         case 'GET_MOVIE_DATA_FULFILLED': {
             return {
                 ...state,
-                movieData: [...payload.movieData, payload.data]
+                movieData: payload,
+                showMovieData: true
             }
         }
         default: {

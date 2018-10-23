@@ -4,7 +4,8 @@ import MovieSearch from './MovieSearch';
 function mapStateToProps(store) {
     return {
         movieName: store.movie.movieName,
-        movieData: store.movie.movieData
+        movieData: store.movie.movieData,
+        showMovieData: store.movie.showMovieData
     }
 }
 
