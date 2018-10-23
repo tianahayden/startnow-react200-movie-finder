@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import MovieDetails from './Components/MovieDetails/MovieDetails'
-import MovieSearch from './Components/MovieSearch/MovieSearch';
+import MovieSearch from './Components/MovieSearch';
 
 export default class App extends Component {
   render() {
