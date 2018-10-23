@@ -56,6 +56,9 @@ $secondary-color: #3f4e51;
 
 .ms-movie {
   height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ms-movie-button {

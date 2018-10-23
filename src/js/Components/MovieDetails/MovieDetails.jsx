@@ -22,14 +22,14 @@ class MovieDetails extends React.Component {
         <h1 className='md-title'>Movie Details</h1>
         <div className='md-movie-details'>
           <div className='image-parent'>
-            <img src={`${movieDetails.Poster}`} />
+            <img id='poster' src={`${movieDetails.Poster}`} />
           </div>
           <div className='md-movie-text'>
-            <h3>{movieDetails.Title}</h3>
+            <h3 id='movieTitle'>{movieDetails.Title}</h3>
             <div className='md-movie-group'>
-              <p>Released {movieDetails.Released}</p>
-              <p>{movieDetails.Runtime}</p>
-              <p>{movieDetails.Rated}</p>
+              <p id='released'>Released {movieDetails.Released}</p>
+              <p id='runtime'>{movieDetails.Runtime}</p>
+              <p id='rated'>{movieDetails.Rated}</p>
             </div>
             <p>{movieDetails.Plot}</p>
             <p>{movieDetails.Awards}</p>

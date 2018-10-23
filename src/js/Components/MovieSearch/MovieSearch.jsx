@@ -33,11 +33,11 @@ class MovieSearch extends React.Component {
                 <h1 className='ms-title'>Get Movie Information</h1>
                 <label>Enter Movie Name:</label>
                 <div className='ms-search-bar'>
-                    <input placeholder='Star Wars' onChange={this.handleSearchInput} onKeyDown={this.enter} />
-                    <button onClick={this.handleSearchButton}>Search</button>
+                    <input id='input' placeholder='Star Wars' onChange={this.handleSearchInput} onKeyDown={this.enter} />
+                    <button id='button' onClick={this.handleSearchButton}>Search</button>
                 </div>
                 {(showMovieData) &&
-                    <div className='ms-results'>
+                    <div id='results' name='results' className='ms-results'>
                         {movieData.Search.map((movie, index) =>
                             <div className='ms-indiv-result' key={index}>
                                 <img className='ms-poster' src={`${movie.Poster}`} />
